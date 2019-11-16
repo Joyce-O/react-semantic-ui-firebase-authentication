@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { distanceInWordsToNow } from 'date-fns';
+import { formatDistance } from 'date-fns';
 import { Link } from 'react-router-dom';
 import { Feed, Icon, Form, Button } from 'semantic-ui-react';
 
 export const TimeAgo = ({ time }) => (
-  <time>{distanceInWordsToNow(time)} ago</time>
+  <time>{formatDistance(time, Date.now())} ago</time>
 );
 
 class MessageItem extends Component {
